@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单的主页</title>
+</head>
+
+<body>
+    <div>
+        <h1>欢迎来到我的主页</h1>
+        <p>这是一个简单的主页页面，用于展示我的个人网站。</p>
+        <p>在这里，你可以了解我的信息和我的项目。</p>
+        <p>欢迎你随时访问我的网站，我会不断更新内容。</p>
+        <img id="preview-image" src="default.jpg" alt="预览图片">
+        <input type="file" id="image-input">
+
+    </div>
+
+    <script>
+        document.querySelector('#image-input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.getElementById('preview-image');
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+
+</html>
