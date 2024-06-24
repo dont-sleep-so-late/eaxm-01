@@ -17,7 +17,26 @@
         <input type="file" id="image-input">
 
     </div>
+    <style>
+        /* 在这里添加简单的样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
 
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
     <script>
         document.querySelector('#image-input').addEventListener('change', function (event) {
             const file = event.target.files[0];
